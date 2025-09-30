@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { fetchBooks } from './service/book';
-
-import {login,logout, register } from './service/auth';
+import {login,logout,register } from './service/auth';
 
 
 function App() {
@@ -9,7 +8,7 @@ function App() {
   const [books, setBooks] = useState([]);
   const [error, setError] = useState('');
   const [username, setUsername] = useState('adm');
-  const [password, setPassword] = useState('1234');
+  const [password, setPassword] = useState('12');
 
   const loadBooks = async () => {
     try {
@@ -37,7 +36,7 @@ function App() {
     try {
       const data = await register(username, password);
     } catch (err) {
-      setError(err.message || 'Login failed');
+      setError(err.message || 'Register failed');
     }
   };
 
@@ -52,7 +51,7 @@ function App() {
       }
      
     } catch (err) {
-      setError(err.message || 'Login failed');
+      setError(err.message || 'Logout failed');
     }
   };
 
